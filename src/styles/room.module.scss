@@ -1,0 +1,349 @@
+@import "./variables.module.scss";
+
+$dropShadow: drop-shadow(1px 1px 3px rgba($black, 0.75));
+$dropShadowClose: drop-shadow(1px 1px 2px rgba($black, 0.25));
+$giShadow: drop-shadow(1px 1px 20px rgba($black, 0.25));
+$colorFilter: hue-rotate(-10deg) saturate(0.7);
+$hover: brightness(90%) $dropShadow;
+
+.taskbar {
+  background: $halfStreak;
+  height: 56px;
+  display: flex;
+  align-items: flex-start;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.planningPoker {
+  font-family: $font;
+  font-size: 50px;
+  line-height: 50px;
+  margin: 1px 0 1px 6px;
+  color: $white;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.logo {
+  background: $white url("../images/logo.svg") no-repeat 50% 50%;
+  background-size: 74px 22px;
+  height: 56px;
+  width: 122px;
+}
+
+.thin {
+  font-weight: 200;
+  margin-right: 4px;
+}
+
+.hide {
+  display: none;
+}
+
+.leftButtons {
+  align-self: center;
+  margin-right: 30px;
+  border: none;
+  font-family: $font;
+  color: $fiddy;
+  font-size: 20px;
+  background: none;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding-left: 32px;
+  cursor: pointer;
+  transition: color 0.5s;
+  outline: none;
+
+  &:hover {
+    color: $white;
+    transition: color 0.5s;
+  }
+}
+
+.room {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+  .inner {
+    text-align: left;
+    margin: 150px auto 75px;
+    border-left: 4px solid $white;
+    padding: 4px 4px 4px 8px;
+    font-size: 36px;
+    line-height: 36px;
+    font-family: $font;
+    color: $white;
+    font-weight: 400;
+    display: inline-block;
+    background: $quarterStreak;
+    min-width: 275px;
+  }
+
+  .lower {
+    display: flex;
+    align-items: flex-start;
+    color: $treeQuarter;
+    font-family: $font;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    margin: 4px 0 0 4px;
+
+    div {
+      margin-right: 20px;
+    }
+
+    span {
+      color: $white;
+      font-weight: 500;
+    }
+  }
+
+  .link {
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 30px;
+    margin: 0 0 0 8px;
+    background: url("../images/link.svg") no-repeat 50% 50%;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .storylink {
+    border-bottom: 1px solid transparent;
+    position: relative;
+
+    span {
+      font-weight: 200;
+    }
+  }
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $blackish;
+  font-size: 30px;
+  line-height: 34px;
+  flex-direction: column;
+  font-family: $font;
+  height: 200px;
+
+  input {
+    width: 75%;
+    height: 30px;
+    font-size: 14px;
+    line-height: 22px;
+    color: $blackish;
+    padding: 4px;
+    margin: 20px;
+    display: block;
+    border-radius: 3px;
+    border: 1px solid rgba($blackish, 0.3);
+    outline: none;
+    text-align: center;
+  }
+
+  button {
+    display: block;
+    font-family: $font;
+    font-size: 14px;
+    padding: 5px 8px;
+    background: $white;
+    border-radius: 3px;
+    border: 1px solid rgba($blackish, 0.3);
+    cursor: pointer;
+
+    &:hover {
+      background: rgba($blackish, 0.1);
+    }
+  }
+}
+
+.name {
+  color: $white;
+  margin: 6px 0 10px 0;
+  padding: 4px 0 6px 6px;
+  border-left: 2px solid $white;
+  background: $quarterStreak;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.ticketField {
+  background: none;
+  border: none;
+  border-bottom: 1px solid $white;
+  width: 100%;
+  outline: none;
+  text-align: left;
+  color: $white;
+  font-family: $font;
+  height: 36px;
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba($white, 0.25);
+    opacity: 1;
+  }
+}
+
+.flip {
+  margin-left: auto;
+  background: url("../images/flip.svg") no-repeat 0 50%;
+  background-size: 25px 25px;
+}
+
+.reset {
+  background: url("../images/reset.svg") no-repeat 0 50%;
+  background-size: 25px 25px;
+}
+
+.cardRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+  margin: 0 10% 200px;
+  flex-grow: 1;
+  align-content: center;
+}
+
+.card {
+  margin: 1%;
+  width: 13%;
+  min-width: 100px;
+  max-width: 200px;
+}
+
+:global {
+  .react-card-flip {
+    filter: $dropShadowClose;
+  }
+}
+
+.flippedCard {
+  width: 100%;
+  padding-bottom: 143%;
+  background-repeat: no-repeat;
+}
+
+.card1 {
+  background-image: url("../images/card-1.svg");
+}
+.card2 {
+  background-image: url("../images/card-2.svg");
+  filter: $colorFilter;
+}
+.card3 {
+  background-image: url("../images/card-3.svg");
+}
+.card5 {
+  background-image: url("../images/card-5.svg");
+  filter: $colorFilter;
+}
+.card8 {
+  background-image: url("../images/card-8.svg");
+}
+.card13 {
+  background-image: url("../images/card-13.svg");
+  filter: $colorFilter;
+}
+
+.vote {
+  z-index: 10;
+  filter: $giShadow;
+  position: fixed;
+  bottom: -450px;
+  left: calc(50% - 220px);
+  width: 440px;
+  height: 600px;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+
+  button {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 8px;
+    border: none;
+    width: 140px;
+    height: 200px;
+    cursor: pointer;
+    filter: $dropShadow;
+    outline: none;
+    cursor: pointer;
+    transition: filter 1s ease-in-out;
+
+    &:hover {
+      filter: $hover;
+      -webkit-filter: $hover;
+    }
+  }
+
+  .card1 {
+    z-index: 21;
+    transform: rotate(-25deg);
+    position: absolute;
+    left: 35px;
+    top: 55px;
+  }
+  .card2 {
+    z-index: 22;
+    transform: rotate(-15deg);
+    position: absolute;
+    left: 75px;
+    top: 40px;
+    filter: $colorFilter $dropShadow;
+  }
+  .card3 {
+    z-index: 23;
+    transform: rotate(-5deg);
+    position: absolute;
+    left: 125px;
+    top: 35px;
+  }
+  .card5 {
+    z-index: 24;
+    transform: rotate(5deg);
+    position: absolute;
+    left: 175px;
+    top: 40px;
+    filter: $colorFilter $dropShadow;
+  }
+  .card8 {
+    z-index: 25;
+    transform: rotate(15deg);
+    position: absolute;
+    left: 225px;
+    top: 55px;
+  }
+  .card13 {
+    z-index: 26;
+    transform: rotate(25deg);
+    position: absolute;
+    left: 265px;
+    top: 77px;
+    filter: $colorFilter $dropShadow;
+  }
+}

@@ -1,0 +1,17 @@
+$font: "Oswald", sans-serif;
+
+$tableBlue: #1b6c82;
+$white: #fff;
+$blackish: #272526;
+$black: #000;
+
+$fiddy: rgba($white, 0.5);
+$treeQuarter: rgba($white, 0.75);
+
+$fullStreak: linear-gradient(90deg, rgba($white, 1) 0%, rgba($white, 0) 100%);
+$halfStreak: linear-gradient(90deg, rgba($white, 0.4) 0%, rgba($white, 0) 100%);
+$quarterStreak: linear-gradient(
+  90deg,
+  rgba($white, 0.2) 0%,
+  rgba($white, 0) 100%
+);

@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  max-height: 100vh;
+}
+
+@-webkit-keyframes slideInOffscreenRight {
+  from {
+    -webkit-transform: translate3d(1000%, 0, 0);
+    transform: translate3d(1000%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInOffscreenRight {
+  from {
+    -webkit-transform: translate3d(1000%, 0, 0);
+    transform: translate3d(1000%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes rainbow {
+  from {
+    -webkit-filter: hue-rotate(10deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes rainbow {
+  from {
+    -webkit-filter: hue-rotate(10deg);
+    filter: hue-rotate(10deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+.john-p,
+.dan-kram {
+  animation: rainbow 4s steps(36) infinite;
+}
+
+.slideInOffscreenRight {
+  -webkit-animation-name: slideInOffscreenRight;
+  animation-name: slideInOffscreenRight;
+  animation-timing-function: ease-out;
+}

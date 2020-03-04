@@ -1,0 +1,7 @@
+@import "./mixins.module.scss";
+@import "./variables.module.scss";
+
+.App {
+  min-height: 100vh;
+  background: $tableBlue url("../images/background@2x.jpg") bottom center;
+}

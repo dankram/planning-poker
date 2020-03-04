@@ -1,0 +1,23 @@
+type PokerRoom @model(
+  queries: { get: "getRoom" },
+  mutations: { create: "createRoom", update: "updateRoom" },
+  subscriptions: null
+) {
+  id: ID!
+  flipped: Boolean!
+  votes: [Vote]!
+  storyLink: String
+}
+
+type Vote {
+  name: String!
+  vote: Int!
+}
+
+type Mutation {
+  addVote(id: ID!, name: String!, vote: Int!): PokerRoom
+}
+
+type Subscription {
+  onUpdateRoom(id: ID!): PokerRoom @aws_subscribe(mutations: ["updateRoom","addVote"])
+}
